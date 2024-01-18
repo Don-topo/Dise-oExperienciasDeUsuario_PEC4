@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainMenu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainMenu
+  m_TableCollectionNameGuidString: cb171805451417c4bacc405b08249bbc
+  m_Entries:
+  - m_Id: 22106787840
+    m_Key: VolumeText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27429359616
+    m_Key: EffectsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30931603456
+    m_Key: LightText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521472233472
+    m_Key: LanguageText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388267927851008
+    m_Key: ResolutionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388347237945344
+    m_Key: EnableBloodText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388644391800832
+    m_Key: EnableSubtitles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388804677128192
+    m_Key: OptionsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 390746870566912
+    m_Key: SensibilityText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404251355041792
+    m_Key: StartText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412695143305216
+    m_Key: ExitText
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3967346171045216280
+  references:
+    version: 2
+    RefIds:
+    - rid: 3967346171045216280
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1705334226708

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainMenu_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: cb171805451417c4bacc405b08249bbc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22106787840
+    m_Localized: General volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27429359616
+    m_Localized: Sound effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521472233472
+    m_Localized: languages
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388267927851008
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388347237945344
+    m_Localized: Enable blood?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388644391800832
+    m_Localized: Show subtitles?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 388804677128192
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 390746870566912
+    m_Localized: Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404251355041792
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412695143305216
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
