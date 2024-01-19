@@ -34,6 +34,7 @@ public class OptionsManager : MonoBehaviour
         resolutions = Screen.resolutions;
         SetResolution();
         PrepareBoard();
+        PrepareBlood();
         PrepareAudioMixers();
         SetAudio();
     }
@@ -55,9 +56,12 @@ public class OptionsManager : MonoBehaviour
 
     public void SetLight(float amount)
     {
-        gameInfo.lightTone += amount;
-        UpdateLights();
-        FileManager.SaveGameInfo(gameInfo);
+        if(gameInfo.lightTone + amount > 0.01f && gameInfo.lightTone + amount < 1.0f)
+        {
+            gameInfo.lightTone += amount;
+            UpdateLights();
+            FileManager.SaveGameInfo(gameInfo);
+        }        
     }
 
     public void SelectLanguage(int languageIndex)
@@ -86,7 +90,7 @@ public class OptionsManager : MonoBehaviour
     public void Continue()
     {
         Debug.Log("Loading level");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void SetGeneralVolume()
@@ -141,14 +145,13 @@ public class OptionsManager : MonoBehaviour
 
     public void ChangeSubtitles()
     {
-        subtitlesCheckBox.isOn = !subtitlesCheckBox.isOn;
         PlaySelectSound();
     }
 
     public void ChangeBlood()
     {
-        bloodCheckbox.isOn = !bloodCheckbox.isOn;
         PlaySelectSound();
+        PrepareBlood();
     }
 
     public void SaveData()
@@ -159,11 +162,17 @@ public class OptionsManager : MonoBehaviour
         gameInfo.bloodEnabled = bloodCheckbox.isOn;
         gameInfo.subtitlesEnabled = subtitlesCheckBox.isOn;
         FileManager.SaveGameInfo(gameInfo);
+        PrepareBlood();
         SetResolution();
 
     }
 
-    public GameInfo GetGameInfo() => gameInfo;
+    public GameInfo GetGameInfo() 
+    {
+        if(gameInfo == null) gameInfo = FileManager.LoadGameConfig();
+        return gameInfo;
+    }
+    
 
     private void PrepareAudioMixers()
     {
@@ -194,8 +203,16 @@ public class OptionsManager : MonoBehaviour
         currentResolutionIndex = gameInfo.resolution;
         UpdateResolutionText();
         subtitlesCheckBox.isOn = gameInfo.subtitlesEnabled;
-        bloodCheckbox.isOn = gameInfo.bloodEnabled;
-        sensibilitySlider.value = gameInfo.sensibility;
+        bloodCheckbox.isOn = gameInfo.bloodEnabled;        
+    }
+
+    private void PrepareBlood()
+    {
+        GameObject[] bloods = GameObject.FindGameObjectsWithTag("Blood");
+        foreach(GameObject blood in bloods)
+        {
+            blood.GetComponent<MeshRenderer>().enabled = bloodCheckbox.isOn;
+        }
     }
 
     private void UpdateLights()

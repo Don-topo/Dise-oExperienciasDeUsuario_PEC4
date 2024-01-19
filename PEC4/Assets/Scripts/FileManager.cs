@@ -15,13 +15,13 @@ public static class FileManager
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(gameInfoPath, FileMode.Open);
             GameInfo gameInfo = formatter.Deserialize(stream) as GameInfo;
-            if (gameInfo == null) gameInfo = new GameInfo(100f, 100f, 1, 100f, true, true, 18, 80f);
+            if (gameInfo == null) gameInfo = new GameInfo(100f, 100f, 1, 0.5f, true, true, 18, 80f);
             stream.Close();
             return gameInfo;
         }
         else
         {
-            return new GameInfo(100f, 100f, 1, 100f, true, true, 18, 80f);
+            return new GameInfo(100f, 100f, 1, 0.5f, true, true, 18, 80f);
         }
     }
 
